@@ -5,6 +5,8 @@ module SessionsHelper
 	self.current_user = user
   end
 
+
+# CURRENT USER AUTHORIZATION and AUTHENTICATION
   def current_user=(user) # assignment to current_user, method current_user= with arg as (user) 
 	@current_user = user 
   end
@@ -13,6 +15,12 @@ module SessionsHelper
 	@current_user ||= User.find_by_remember_token(cookies[:remember_token])
   end
 
+  def current_user?(user)
+	user == current_user
+  end
+
+
+# SIGNIN / SIGNOUT
   def signed_in?
 	!current_user.nil?  # says, current user is not nil? ie not logged in already 
 		# true - current user is logged in,  false - no current user logged in
@@ -21,6 +29,16 @@ module SessionsHelper
   def sign_out
 	self.current_user = nil
 	cookies.delete(:remember_token)  # kill remember token in browser
+  end
+
+#FRIENDLY FORWARDING of users to their intended page
+  def redirect_back_or(default)
+	redirect_to(session[:return_to] || default)
+	session.delete(:return_to)
+  end
+
+  def store_location
+	session[:return_to] = request.fullpath
   end
 
 
