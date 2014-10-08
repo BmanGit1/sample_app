@@ -14,8 +14,9 @@ class UsersController < ApplicationController
 
   
 # GENERAL METHODS
-  def show
+  def show  # show users profile page , and posts from that user with count etc...
 	@user = User.find(params[:id])
+	@microposts = @user.microposts.paginate(page: params[:page])
   end
 
   def index
@@ -66,6 +67,7 @@ class UsersController < ApplicationController
   end
 
 # PRIVATE METHODS
+  # we can del signed_in_user (p457) because it is in SessionsHelper now, but this is a little different, so I'm keeping it for testing
   def signed_in_user
 	store_location   # store location to return user to this pg when properly signed in
 	redirect_to signin_path, notice: "Please sign in." unless signed_in?  # yellow notice bar

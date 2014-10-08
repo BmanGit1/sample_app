@@ -19,6 +19,13 @@ module SessionsHelper
 	user == current_user
   end
 
+  def signed_in_user    # to be used by microposts in case Poster is not signed in
+	unless signed_in?
+	  store_location  # will try to rediret user back here after they sign in
+	  redirect_to signin_path, notice: "Please sign in."
+  	end
+  end
+
 
 # SIGNIN / SIGNOUT
   def signed_in?

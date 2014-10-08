@@ -14,8 +14,9 @@ class UsersController < ApplicationController
 
   
 # GENERAL METHODS
-  def show
+  def show  # show users profile page , and posts from that user with count etc...
 	@user = User.find(params[:id])
+	@microposts = @user.microposts.paginate(page: params[:page])
   end
 
   def index
@@ -78,5 +79,6 @@ class UsersController < ApplicationController
 
   def admin_user
 	redirect_to(root_path) unless current_user.admin?
+  end
 
 end
