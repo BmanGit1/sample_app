@@ -1,8 +1,10 @@
 class StaticPagesController < ApplicationController
 
   def home
-	@micropost = current_user.microposts.build if signed_in?  # enable post field
-	@feed_items = current_user.feed.paginate(page: params[:page]) # pull params for page
+	if signed_in?
+	  @micropost = current_user.microposts.build if signed_in?  # enable post field
+	  @feed_items = current_user.feed.paginate(page: params[:page]) # pull params for page
+	end
   end
 
   def help
@@ -13,5 +15,6 @@ class StaticPagesController < ApplicationController
 
   def contact
   end
+
 
 end
