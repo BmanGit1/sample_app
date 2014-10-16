@@ -19,11 +19,11 @@
 <% else %>
 
   <div class="center hero-unit">
-	<h1>Welcome to the Sample App</h1>
+	<h1>Welcome to DTrials</h1>
 
 	<h2>
 	  This is the home page for the
-	  <a href="http://railstutorial.org/">Ruby on Rails Tutorial B Style</a>
+	  Dtrials Cloud 
 	  sample application
 	</h2>
 
@@ -31,6 +31,6 @@
 
   </div>
 
-  <%= link_to image_tag("rails.png", alt: "Rails"), 'http//rubyonrails.org/' %>
+  <%= link_to image_tag("rails.png", alt: "Rails"), 'http//clinicaltrials.gov/' %>
   
 <% end %> 
