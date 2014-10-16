@@ -1,17 +1,11 @@
 <% provide(:title, 'Help') %>
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Ruby on Rails Tutorial Sample App | <%= yield(:title) %></title>
-  </head>
   <body>
     <h1>Help</h1>
     <p>
-      Get help on Ruby on Tails Tutorial at the
-      <a href="http://railstutorial.org/help">Rails Tutorial help pages</a>.
-      To get help on this sample app, see the
-      <a href="http://railstutorial.org/book">Rails Tutorial book</a>
+      Get help on Ruby on DTails at the
+      <a href="http://clinicaltrials.gov">ClinicalTrials.Gov web site</a>. <br>
+      To get help on the use of this Application, see the
+      <a href="http://clinicaltrials.gov">Dtrials Tutorial book</a>
     </p>
-  </body>
-</html>
+

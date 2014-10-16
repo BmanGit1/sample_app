@@ -1,12 +1,8 @@
-<% provide(:title, 'About Us') %>
+<% provide(:title, 'Contact') %>
 
-
-  <body>
-    <h1>About Us</h1>
+    <h1>Contact</h1>
     <p>
-      The <a href="http://railstutorial.org/">Ruby on Rails Tutorial</a> <br>
-      is a project to make a book and screencasts to teach web development
-      with <a href="http://rubyonrails.org/">Ruby on Rails</a>.  <br> 
-      This is the sample application for the tutorial.  chaper 3
+      Contact BMan at Mobile Medicine about the Dtrials App at the 
+      <a href="http://IBM.com">MobileMedicine Contact Page</a>.  
     </p>
 
